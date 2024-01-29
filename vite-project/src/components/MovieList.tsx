@@ -1,7 +1,8 @@
 import"../MovieList.css";
 import MovieListItem from "./MovieListItem";
+import { useState } from "react";
 
-const movies=[
+const initMovies=[
     {
     id:1,
     title: "Killers of the Flower Moon",
@@ -26,10 +27,21 @@ const movies=[
 ];
 
 export default function MovieList(){
+    const [movies, setMovies]=useState(initMovies);
+    const handleRating=(id:number, rating: number):void =>{
+        setMovies((prevMovie) => {
+            return prevMovie.filter((movie) =>{
+                if(movie.id===id) movie.rating=rating;
+                return movie;
+            });
+        });
+    };
     return(
         <div className="container">
           {movies.map((movie):JSX.Element=>{
-            return <MovieListItem key={movie.id} movie={movie}/>;
+            return <MovieListItem key={movie.id}
+             movie={movie}
+             onRating={handleRating}/>;
           })}  
 
         </div>

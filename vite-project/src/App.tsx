@@ -1,9 +1,11 @@
 import MovieList from "./components/MovieList";
 import ImportantList from "./components/ImportantList";
 import Button from "./components/Button";
+import { useState } from "react";
 
 function App() {
-
+  const colors=["red", "green", "yellow"];
+  const[backgroundColor, setBackgroundColor]=useState(colors[0]);
 
   return (
     <>
@@ -29,6 +31,19 @@ function App() {
         </div>
         
         <Button text="Click me" handleClick={() => alert("Button geklickt")}/>
+
+        <div style={{backgroundColor, padding:"100px", margin:"10px"}}>
+          {colors.map((color):JSX.Element =>{ {/*erstellt drei button die die hintergrundfarbe ändert anhand des arrays ganz oben (colors) */}
+            return(
+              <button key={color} onClick={()=> setBackgroundColor(color)}>
+                {color}
+              </button>
+            );
+          })}
+
+        </div>
+
+        
   </>
   );
 }

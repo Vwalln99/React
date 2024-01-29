@@ -1,4 +1,5 @@
 import"../MovieList.css";
+import MovieListItem from "./MovieListItem";
 
 const movies=[
     {
@@ -27,17 +28,8 @@ const movies=[
 export default function MovieList(){
     return(
         <div className="container">
-          {movies.map((movie)=>{
-            return(
-                <div className="movie-card" key={movie.id}>
-                    <h2>Title: {movie.title}</h2>
-                    <h5>Director: {movie.director}</h5>
-                    <span>Runtime: {movie.runtime} h</span>
-                    <div>
-                        {movie.rating && "*".repeat(movie.rating)}
-                    </div>
-                </div>
-            );
+          {movies.map((movie):JSX.Element=>{
+            return <MovieListItem key={movie.id} movie={movie}/>;
           })}  
 
         </div>

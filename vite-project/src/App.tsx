@@ -1,6 +1,7 @@
 import MovieList from "./components/MovieList";
 import ImportantList from "./components/ImportantList";
 import Button from "./components/Button";
+import InputForm from "./components/Formular";
 import { useState } from "react";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <div>
       <h1>Movie List</h1>
       <MovieList/>
+      <InputForm/>
     </div>
     <div>
     <h1>Important List</h1>

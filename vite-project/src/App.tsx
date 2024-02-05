@@ -1,8 +1,9 @@
-import MovieList from "./components/MovieList";
+import MovieList from "./components/MovieList.container";
 import ImportantList from "./components/ImportantList";
 import Button from "./components/Button";
 import InputForm from "./components/Formular";
-import { useState } from "react";
+import CountOnInput from "./components/CountOnInput";
+import { useState, useRef } from "react";
 
 function App() {
   const colors=["red", "green", "yellow"];
@@ -45,7 +46,8 @@ function App() {
 
         </div>
 
-
+          <h1>Input</h1>
+          <CountOnInput/>
   </>
   );
 }

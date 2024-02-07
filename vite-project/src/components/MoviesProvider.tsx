@@ -3,7 +3,7 @@ import MovieContext from "../ts/interfaces/MovieContext";
 import { IMovie } from "../ts/interfaces/global-interfaces";
 
 interface Props{
-    children:React.ReactNode;
+    children: React.ReactNode;
 }
 
 export default function MoviesProvider({children}:Props){

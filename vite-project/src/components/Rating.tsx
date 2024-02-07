@@ -5,7 +5,6 @@ import MovieContext from "../ts/interfaces/MovieContext";
 
 interface Props{
     item:IMovie;
-
 }
 
 export default function Rating({item}:Props):JSX.Element[]{
@@ -22,7 +21,7 @@ export default function Rating({item}:Props):JSX.Element[]{
     },
     [setMovies]
     );
-    
+
     const ratings:JSX.Element[]=[];
     for(let i=0; i<5; i++){
         ratings.push(

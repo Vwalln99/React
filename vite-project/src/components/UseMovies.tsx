@@ -16,11 +16,12 @@ export default function useMovies(){
     };
         (async() =>{
             try{
-                const data = await fetch('/movies', options);
+                const data = await fetch('http://localhost:5000/movies', options);
                 setMovies((await data.json()) as IMovie[]);
             } catch (error){
                 setErr(error as Error);
             }
         })();
-    }, []);
+    }, [setMovies]);
+    return [movies, err];
 }

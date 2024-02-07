@@ -1,4 +1,5 @@
 import MovieList from "./components/MovieList.container";
+import MoviesProvider from "./components/MoviesProvider";
 import ImportantList from "./components/ImportantList";
 import Button from "./components/Button";
 import InputForm from "./components/Formular";
@@ -13,7 +14,9 @@ function App() {
     <>
     <div>
       <h1>Movie List</h1>
+      <MoviesProvider>
       <MovieList/>
+      </MoviesProvider>
       <InputForm/>
     </div>
     <div>

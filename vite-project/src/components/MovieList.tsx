@@ -5,9 +5,8 @@ import { IMovie } from "../ts/interfaces/global-interfaces";
 interface Props{
     movies:IMovie[];
     err: Error | null;
-    handleRating: (id: number, rating: number) => void;
 }
-    export default function MovieList({movies, err, handleRating}:Props){
+    export default function MovieList({movies, err}:Props){
     
     {
         if(err !== null){
@@ -21,7 +20,7 @@ interface Props{
                         <MovieListItem 
                             key={movie.id}
                             movie={movie}
-                            onRating={handleRating}
+                            onRating={}
                         />
                     );
                 })}  

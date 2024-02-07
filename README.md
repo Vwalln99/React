@@ -1,0 +1,1 @@
+Some testings with React

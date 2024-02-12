@@ -22,10 +22,18 @@ export default function DeleteDialog({open, title, text, onConfirm}:Props){
                 {title}
             </DialogTitle>
             <DialogContent>
-                <DialogContentText>
+                <DialogContentText id="delete-dialog-description">
                     {text}
                 </DialogContentText>
             </DialogContent>
+            <DialogActions>
+                <Button onClick={() => onConfirm(true)} color="primary" autoFocus>
+                    Ok
+                </Button>
+                <Button onClick={() => onConfirm(false)} color="secondary">
+                    Cancel
+                </Button>
+            </DialogActions>
         </Dialog>
     );
 }
